@@ -11,6 +11,8 @@ RUN npm install
 # Copy the rest of the app source code
 COPY . .
 
+ENV HOST=0.0.0.0
+ENV PORT=5427
 # Expose the port React uses by default
 EXPOSE 5427
 
