@@ -15,4 +15,4 @@ COPY . .
 EXPOSE 8080
 
 # Start the React app (development server)
-CMD ["npm", "run","serve"]
+CMD ["npm", "run","serve","--","--port","5427"]
