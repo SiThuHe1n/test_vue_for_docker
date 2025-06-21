@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3000
 
 # Start the React app (development server)
-CMD ["npm", "run","start","--","--port","3000", "--host", "0.0.0.0"]
+CMD ["npm", "run","serve","--","--port","3000", "--host", "0.0.0.0"]
