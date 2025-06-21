@@ -1,0 +1,1 @@
+"use strict";(self["webpackChunkkam_frontend"]=self["webpackChunkkam_frontend"]||[]).push([[594],{709:function(n,t,u){u.r(t),u.d(t,{default:function(){return k}});var a=u(641);const e={class:"about"},r=(0,a.Lk)("h1",null,"This is an about page",-1),s=[r];function c(n,t){return(0,a.uX)(),(0,a.CE)("div",e,s)}var o=u(262);const f={},i=(0,o.A)(f,[["render",c]]);var k=i}}]);

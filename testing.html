@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roulette Wheel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="wheel-container">
+            <div class="wheel" id="wheel">
+                <!-- Add labels here -->
+                <div class="label" style="--rotation: 5deg;">Red</div>
+                <div class="label" style="--rotation: 20deg;">Yellow</div>
+                <div class="label" style="--rotation: 37.5deg;">Light Green</div>
+                <div class="label" style="--rotation: 52.5deg;">Green</div>
+                <div class="label" style="--rotation: 67.5deg;">Cyan</div>
+                <div class="label" style="--rotation: 80deg;">Blue</div>
+                <div class="label" style="--rotation: 90deg;">Purple</div>
+                <div class="label" style="--rotation: 97.5deg;">Pink</div>
+            </div>
+        </div>
+        <button id="spinButton">Spin</button>
+        <p id="result"></p>
+    </div>
+    
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.wheel-container {
+    position: relative;
+    display: inline-block;
+}
+
+.wheel {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid #000;
+    background: conic-gradient(
+        #FF5733 0% 10%,  /* Red: 10% */
+        #FFC300 10% 30%, /* Yellow: 20% */
+        #DAF7A6 30% 45%, /* Light Green: 15% */
+        #33FF57 45% 60%, /* Green: 15% */
+        #33FFF5 60% 75%, /* Cyan: 15% */
+        #3357FF 75% 85%, /* Blue: 10% */
+        #8E33FF 85% 95%, /* Purple: 10% */
+        #FF33A1 95% 100% /* Pink: 5% */
+    );
+    position: relative;
+    margin: 0 auto;
+}
+
+.wheel::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: #000;
+    border-radius: 50%;
+}
+
+/* Label Styles */
+.label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0% 0%;
+    transform: rotate(var(--rotation)) translate(140px);
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 3px black;
+    pointer-events: none; /* Ignore clicks */
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+</style>
+</body>
+</html>
