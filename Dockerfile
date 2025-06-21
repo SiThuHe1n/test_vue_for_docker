@@ -10,11 +10,12 @@ RUN npm install
 
 # Copy the rest of the app source code
 COPY . .
+RUN npm run build
 
-ENV HOST=0.0.0.0
-ENV PORT=27578
-# Expose the port React uses by default
-EXPOSE 27578
+FROM nginx:alpine
 
-# Start the React app (development server)
-CMD ["npm", "run","serve","--","--port","27578", "--host", "0.0.0.0"]
+COPY --from=build /app/dist /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
