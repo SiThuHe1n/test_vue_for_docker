@@ -11,10 +11,10 @@ RUN npm install
 # Copy the rest of the app source code
 COPY . .
 
-# ENV HOST=0.0.0.0
-# ENV PORT=3000
+ENV HOST=0.0.0.0
+ENV PORT=27578
 # Expose the port React uses by default
-EXPOSE 3000
+EXPOSE 27578
 
 # Start the React app (development server)
-CMD ["npm", "run","serve","--","--port","3000", "--host", "0.0.0.0"]
+CMD ["npm", "run","serve","--","--port","27578", "--host", "0.0.0.0"]
